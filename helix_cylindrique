@@ -1,0 +1,35 @@
+# Import the required python libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Define the parameters of the helix cylindrique
+r = 1  
+h = 2 
+n = 100
+
+# Generate points on the cylindrical helix
+theta = np.linspace(0, 4 * np.pi, n)  
+z = np.linspace(0, h, n)  # Altura
+x = r * np.cos(theta)  # Coordenada x
+y = r * np.sin(theta)  # Coordenada y
+
+# Plot 3D configurtation
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot the points on the cylindrical helix
+ax.scatter(x, y, z, c='b')
+
+# Set graph labels 
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+# Define limits of the graph
+ax.set_xlim(-r, r)
+ax.set_ylim(-r, r)
+ax.set_zlim(0, h)
+
+# Show the graphs 
+plt.show()
